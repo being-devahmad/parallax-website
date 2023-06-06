@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MoonLight Parallax</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">MOoON</a>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="images/stars.png" id="stars">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountains_behind.png" id="m_behind">
+        <h2 id="text">Moon Light</h2>
+        <a class="btn" href="#">Explore</a>
+        <img src="images/mountains_front.png" id="m_front">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias culpa, repellat laudantium veniam id officia voluptatum mollitia dolore atque velit itaque odio. Voluptatum sequi adipisci explicabo labore deserunt earum ipsa laborum provident qui facere, pariatur iste voluptatibus quos, architecto voluptate temporibus veritatis delectus sint similique nam reprehenderit! Dignissimos quo facilis, aut molestiae distinctio, tempore eveniet odio accusantium laboriosam sapiente laborum, cumque vel. Tenetur fuga ipsam itaque eveniet vitae quia perspiciatis architecto, odit accusamus officiis laborum a rerum corrupti optio cupiditate odio ullam delectus quo omnis pariatur eius. Impedit ducimus dignissimos rem enim labore veritatis aperiam, pariatur sint, inventore totam esse?<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, facere architecto. Vitae nulla, doloribus obcaecati tempora praesentium tempore magnam possimus architecto aspernatur enim vel quaerat ratione debitis repudiandae rem, nostrum adipisci neque quisquam reiciendis, quae quod. Ratione libero, illum cupiditate incidunt facere voluptas totam eius doloribus ipsa voluptates autem placeat, commodi voluptatum tempora assumenda vitae esse qui ipsam. Asperiores, amet.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, facere architecto. Vitae nulla, doloribus obcaecati tempora praesentium tempore magnam possimus architecto aspernatur enim vel quaerat ratione debitis repudiandae rem, nostrum adipisci neque quisquam reiciendis, quae quod. Ratione libero, illum cupiditate incidunt facere voluptas totam eius doloribus ipsa voluptates autem placeat, commodi voluptatum tempora assumenda vitae esse qui ipsam. Asperiores, amet.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, facere architecto. Vitae nulla, doloribus obcaecati tempora praesentium tempore magnam possimus architecto aspernatur enim vel quaerat ratione debitis repudiandae rem, nostrum adipisci neque quisquam reiciendis, quae quod. Ratione libero, illum cupiditate incidunt facere voluptas totam eius doloribus ipsa voluptates autem placeat, commodi voluptatum tempora assumenda vitae esse qui ipsam. Asperiores, amet.</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let m_behind = document.getElementById('m_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let m_front = document.getElementById('m_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value=window.scrollY;
+
+            stars.style.left= value * 0.25 + 'px';
+
+            moon.style.top= value * 1.05 + 'px';
+
+            m_behind.style.top= value * 0.5 + 'px';
+
+            m_front.style.top= value * 0 + 'px';
+
+            text.style.marginRight= value * 4 + 'px';
+
+            text.style.marginTop= value * 1.5 + 'px';
+
+            btn.style.marginTop= value * 4 + 'px';
+
+            header.style.top= value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
